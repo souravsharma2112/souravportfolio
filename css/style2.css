@@ -1,0 +1,192 @@
+/* =============================      FONTS      ======================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* =============================  VARIABLES CSS  ======================== */
+
+:root{
+    --header_height : 3rem;
+    /* =========================     Colors      ========================= */
+
+    /* Change Favorite Color*/
+    --hue-color: 250;
+    /* --hue-color: 999; */
+
+    /* HSL Color Mode */
+    --first_color           :   hsl(var(--hue-color), 69% , 61%);
+    --first_color_second    :   hsl(var(--hue-color), 69% , 61%);
+    --first_color_alt       :   hsl(var(--hue-color), 57% , 53%);
+    --first_color_lighter   :   hsl(var(--hue-color), 92% , 85%);
+    --title_color           :   hsl(var(--hue-color), 8%  , 15%);
+    --text_color            :   hsl(var(--hue-color), 8%  , 45%);
+    --text_color_light      :   hsl(var(--hue-color), 8%  , 65%);
+    --input_color           :   hsl(var(--hue-color), 70% , 96%);
+    --body_color            :   hsl(var(--hue-color), 60% , 99%);
+    --container_color       :   #FFF;
+    
+    /*  FONT AND TYPOGRAPHY  */
+
+    --body_font : 'Poppins', sans-serif;
+
+    /* .5rem = 8px , 1rem = 16px , 1.5rem = 24px */
+
+    --big_font_size     :   2rem    ;
+    --h1_font_size      :   1.5rem  ;
+    --h2_font_size      :   1.25rem ;
+    --h3_font_size      :   1.125rem;
+    --normal_font_size  :   .938rem ;
+    --small_font_size   :   .813rem ;
+    --smaller_font_size :   .75rem  ;
+
+    /* font weight */
+
+    --font_medium    : 500 ; 
+    --font_semi_bold : 600 ; 
+
+    /* Margenes Bottom */
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px */
+    --mb_0_25 : .25rem ;
+    --mb_0_5  : .5rem  ;
+    --mb_0_75 : .75rem ;
+    --mb_1    : 1rem   ;
+    --mb_1_5  : 1.5rem ;
+    --mb_2    : 2rem   ;
+    --mb_2_5  : 2.5rem ;
+    --mb_3    : 3rem   ;
+
+    /* Z-index */
+    --z_tooltip : 10 ; 
+    --z_fixed   : 100 ; 
+    --z_model   : 1000 ; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================= CSS RESET ============================ */
+
+.container{
+    max-width: 768px;
+    margin-left: var(--mb_1_5);
+    margin-right: var(--mb_1_5);
+}
+
+.grid{
+    display: grid;
+    grid-gap: 1.5rem;
+}
+
+body{
+    margin          : 0 0 var(--header_height) 0;
+    font-family     : var(--body_font);
+    font-size       : var(--normal_font_size);
+    background-color: var(--body_color);
+    color           : var(--text_color);
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+
+.header{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: var(--z_fixed);
+    background-color: var(--body_color);
+}
+
+.nav{
+    height: var(--header_height);
+    /* background-color: red; */
+    max-width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.nav__logo ,.nav__toggle{
+    color: var(--title_color);
+    font-weight: var(--font_medium);
+}
+
+.nav__logo:hover{
+    color: var(--first_color);
+}
+
+.nav__toggle{
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.nav__toggle:hover{
+    color: var(--first_color);
+}
+
+
+@media screen and (max-width:767px) {
+    .nav__menu{
+        position: fixed;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--body_color);
+        padding: 2rem 1.5rem 4rem;
+        box-shadow: 0 -1px 4px rgba(0,0,0,.15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        transition: .3s;
+    }
+}
+
+.nav__ul{
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 2rem;
+
+}
+
+.nav__link{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: var(--small_font_size);
+    color: var(--title_color);
+    font-weight: var(--font_medium);
+}
+
+.nav__link:hover{
+    color: var(--first_color);
+}
+
+.nav__icons{
+    font-size: 1.2rem;
+}
+
+.nav__close{
+    position: absolute;
+    right: 1.35rem;
+    bottom: .35rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--first_color);
+
+}
+
+.nav__close:hover{
+    color: var(--first_color_alt);
+}
+
+/* ===== SHOW MENU ====== */
+.show_menu{
+    bottom: 0;
+}
